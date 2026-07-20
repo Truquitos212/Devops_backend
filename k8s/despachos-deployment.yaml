@@ -22,6 +22,29 @@ spec:
         - name: SPRING_DATASOURCE_URL
           value: jdbc:mysql://mysql-service:3306/innovatech_db?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
         - name: SPRING_DATASOURCE_USERNAME
-          value: admin
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: MYSQL_USER
         - name: SPRING_DATASOURCE_PASSWORD
-          value: adminpassword
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: MYSQL_PASSWORD
+        resources:
+          requests:
+            cpu: "200m"
+            memory: "256Mi"
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
+        readinessProbe:
+          tcpSocket:
+            port: 8080
+          initialDelaySeconds: 20
+          periodSeconds: 10
+        livenessProbe:
+          tcpSocket:
+            port: 8080
+          initialDelaySeconds: 30
+          periodSeconds: 15
