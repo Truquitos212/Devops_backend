@@ -2,7 +2,7 @@
 
 Backend del sistema de **Ventas y Despachos** de Innovatech Chile: dos microservicios Spring Boot con MySQL, desplegados en **AWS EKS** con un pipeline de CI/CD en GitHub Actions.
 
-Proyecto en equipo de la asignatura **Ingeniería DevOps (ISY1101)**, DuocUC. Frontend: [innovatech-devops-frontend](https://github.com/Truquitos212/innovatech-devops-frontend).
+Proyecto en equipo de la asignatura **Ingeniería DevOps (ISY1101)**, DuocUC. Frontend: [Devops_frontend](https://github.com/Truquitos212/Devops_frontend).
 
 ## Stack
 
